@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">App Válvulas</string>
+    <string name="title_activity_main">App Válvulas</string>
+    <string name="package_name">pe.institucional.valvulasgis</string>
+    <string name="custom_url_scheme">pe.institucional.valvulasgis</string>
+</resources>
