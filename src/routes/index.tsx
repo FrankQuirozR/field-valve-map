@@ -1,4 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';import { fallback,zodValidator } from '@tanstack/zod-adapter';import { z } from 'zod';import { MapPage } from '@/pages/MapPage';
 const mapSearchSchema=z.object({valve:fallback(z.string(),'').default('')});
 export const Route=createFileRoute('/')({validateSearch:zodValidator(mapSearchSchema),head:()=>({meta:[{title:'Mapa de válvulas — App Válvulas'},{name:'description',content:'Mapa GIS local para localizar y georreferenciar válvulas sin conexión.'},{property:'og:title',content:'Mapa de válvulas — App Válvulas'},{property:'og:description',content:'Mapa GIS local para localizar y georreferenciar válvulas sin conexión.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:MapRoute});
-function MapRoute(){const {valve}=Route.useSearch();return <MapPage initialValveId={valve||undefined}/>}
+function MapRoute(){const {valve}=Route.useSearch();return <MapPage key={valve||'all'} initialValveId={valve||undefined}/>}
