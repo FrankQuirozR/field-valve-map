@@ -9,7 +9,10 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:android:web": "vite build --config vite.mobile.config.ts",
+    "android:sync": "bun run build:android:web && cap sync android",
+    "android:apk": "bun run android:sync && cd android && ./gradlew assembleDebug"
   },
   "overrides": {
     "rolldown": "1.2.1"
