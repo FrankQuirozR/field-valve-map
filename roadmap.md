@@ -13,3 +13,4 @@
 - [x] Corregir carga y encuadre del mapa offline
 - [x] Empaquetado Android y generación de APK instalable
 - [x] Optimización del mapa para emuladores y dispositivos Android
+- [ ] Filtrar y destacar en el mapa la válvula elegida desde Buscar
