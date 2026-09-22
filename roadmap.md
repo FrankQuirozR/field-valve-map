@@ -9,4 +9,4 @@
 - [x] Exportación CSV, GeoJSON y KML
 - [x] Gestión de zonas, configuración y almacenamiento
 - [x] PWA offline y preparación para Capacitor
-- [ ] Validación de compilación y flujos principales
+- [x] Validación de compilación y flujos principales
