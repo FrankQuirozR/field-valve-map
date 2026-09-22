@@ -1,0 +1,6 @@
+import type { GpsPosition } from '@/models';
+export const gpsService={
+ getCurrentPosition():Promise<GpsPosition>{return new Promise((resolve,reject)=>{if(!navigator.geolocation){reject(new Error('GPS no disponible'));return} navigator.geolocation.getCurrentPosition(p=>resolve({latitude:p.coords.latitude,longitude:p.coords.longitude,accuracy:p.coords.accuracy,altitude:p.coords.altitude??undefined,timestamp:p.timestamp}),e=>reject(new Error(e.message)),{enableHighAccuracy:true,timeout:15000,maximumAge:0})})},
+ watch(onPosition:(p:GpsPosition)=>void,onError:(message:string)=>void){if(!navigator.geolocation){onError('GPS no disponible');return ()=>{}} const id=navigator.geolocation.watchPosition(p=>onPosition({latitude:p.coords.latitude,longitude:p.coords.longitude,accuracy:p.coords.accuracy,altitude:p.coords.altitude??undefined,timestamp:p.timestamp}),e=>onError(e.message),{enableHighAccuracy:true,maximumAge:2000,timeout:20000}); return()=>navigator.geolocation.clearWatch(id)}
+};
+export function distanceMeters(a:{latitude:number;longitude:number},b:{latitude:number;longitude:number}){const r=6371e3,p1=a.latitude*Math.PI/180,p2=b.latitude*Math.PI/180,dp=(b.latitude-a.latitude)*Math.PI/180,dl=(b.longitude-a.longitude)*Math.PI/180; const h=Math.sin(dp/2)**2+Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2; return 2*r*Math.atan2(Math.sqrt(h),Math.sqrt(1-h))}

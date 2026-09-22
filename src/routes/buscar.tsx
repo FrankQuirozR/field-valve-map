@@ -1,0 +1,2 @@
+import { createFileRoute } from '@tanstack/react-router';import { SearchPage } from '@/pages/SearchPage';
+export const Route=createFileRoute('/buscar')({head:()=>({meta:[{title:'Buscar válvula — App Válvulas'},{name:'description',content:'Busca válvulas locales por código, atributos o distancia.'},{property:'og:title',content:'Buscar válvula — App Válvulas'},{property:'og:description',content:'Busca válvulas locales por código, atributos o distancia.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}),component:SearchPage});

@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BuscarRouteImport } from './routes/buscar'
+import { Route as ConfiguracionRouteImport } from './routes/configuracion'
+import { Route as DescargasRouteImport } from './routes/descargas'
+import { Route as ResultadosRouteImport } from './routes/resultados'
+import { Route as ValvulasValveIdRouteImport } from './routes/valvulas.$valveId'
+import { Route as ValvulasValveIdCapturarRouteImport } from './routes/valvulas.$valveId_.capturar'
+import { Route as ValvulasValveIdFotosRouteImport } from './routes/valvulas.$valveId_.fotos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BuscarRoute = BuscarRouteImport.update({
+  id: '/buscar',
+  path: '/buscar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracionRoute = ConfiguracionRouteImport.update({
+  id: '/configuracion',
+  path: '/configuracion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DescargasRoute = DescargasRouteImport.update({
+  id: '/descargas',
+  path: '/descargas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultadosRoute = ResultadosRouteImport.update({
+  id: '/resultados',
+  path: '/resultados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValvulasValveIdRoute = ValvulasValveIdRouteImport.update({
+  id: '/valvulas/$valveId',
+  path: '/valvulas/$valveId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValvulasValveIdCapturarRoute = ValvulasValveIdCapturarRouteImport.update({
+  id: '/valvulas/$valveId_/capturar',
+  path: '/valvulas/$valveId/capturar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValvulasValveIdFotosRoute = ValvulasValveIdFotosRouteImport.update({
+  id: '/valvulas/$valveId_/fotos',
+  path: '/valvulas/$valveId/fotos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/buscar': typeof BuscarRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/descargas': typeof DescargasRoute
+  '/resultados': typeof ResultadosRoute
+  '/valvulas/$valveId': typeof ValvulasValveIdRoute
+  '/valvulas/$valveId/capturar': typeof ValvulasValveIdCapturarRoute
+  '/valvulas/$valveId/fotos': typeof ValvulasValveIdFotosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/buscar': typeof BuscarRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/descargas': typeof DescargasRoute
+  '/resultados': typeof ResultadosRoute
+  '/valvulas/$valveId': typeof ValvulasValveIdRoute
+  '/valvulas/$valveId/capturar': typeof ValvulasValveIdCapturarRoute
+  '/valvulas/$valveId/fotos': typeof ValvulasValveIdFotosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/buscar': typeof BuscarRoute
+  '/configuracion': typeof ConfiguracionRoute
+  '/descargas': typeof DescargasRoute
+  '/resultados': typeof ResultadosRoute
+  '/valvulas/$valveId': typeof ValvulasValveIdRoute
+  '/valvulas/$valveId_/capturar': typeof ValvulasValveIdCapturarRoute
+  '/valvulas/$valveId_/fotos': typeof ValvulasValveIdFotosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/buscar'
+    | '/configuracion'
+    | '/descargas'
+    | '/resultados'
+    | '/valvulas/$valveId'
+    | '/valvulas/$valveId/capturar'
+    | '/valvulas/$valveId/fotos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/buscar'
+    | '/configuracion'
+    | '/descargas'
+    | '/resultados'
+    | '/valvulas/$valveId'
+    | '/valvulas/$valveId/capturar'
+    | '/valvulas/$valveId/fotos'
+  id:
+    | '__root__'
+    | '/'
+    | '/buscar'
+    | '/configuracion'
+    | '/descargas'
+    | '/resultados'
+    | '/valvulas/$valveId'
+    | '/valvulas/$valveId_/capturar'
+    | '/valvulas/$valveId_/fotos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BuscarRoute: typeof BuscarRoute
+  ConfiguracionRoute: typeof ConfiguracionRoute
+  DescargasRoute: typeof DescargasRoute
+  ResultadosRoute: typeof ResultadosRoute
+  ValvulasValveIdRoute: typeof ValvulasValveIdRoute
+  ValvulasValveIdCapturarRoute: typeof ValvulasValveIdCapturarRoute
+  ValvulasValveIdFotosRoute: typeof ValvulasValveIdFotosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/buscar': {
+      id: '/buscar'
+      path: '/buscar'
+      fullPath: '/buscar'
+      preLoaderRoute: typeof BuscarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracion': {
+      id: '/configuracion'
+      path: '/configuracion'
+      fullPath: '/configuracion'
+      preLoaderRoute: typeof ConfiguracionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/descargas': {
+      id: '/descargas'
+      path: '/descargas'
+      fullPath: '/descargas'
+      preLoaderRoute: typeof DescargasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resultados': {
+      id: '/resultados'
+      path: '/resultados'
+      fullPath: '/resultados'
+      preLoaderRoute: typeof ResultadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valvulas/$valveId': {
+      id: '/valvulas/$valveId'
+      path: '/valvulas/$valveId'
+      fullPath: '/valvulas/$valveId'
+      preLoaderRoute: typeof ValvulasValveIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valvulas/$valveId_/capturar': {
+      id: '/valvulas/$valveId_/capturar'
+      path: '/valvulas/$valveId/capturar'
+      fullPath: '/valvulas/$valveId/capturar'
+      preLoaderRoute: typeof ValvulasValveIdCapturarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valvulas/$valveId_/fotos': {
+      id: '/valvulas/$valveId_/fotos'
+      path: '/valvulas/$valveId/fotos'
+      fullPath: '/valvulas/$valveId/fotos'
+      preLoaderRoute: typeof ValvulasValveIdFotosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BuscarRoute: BuscarRoute,
+  ConfiguracionRoute: ConfiguracionRoute,
+  DescargasRoute: DescargasRoute,
+  ResultadosRoute: ResultadosRoute,
+  ValvulasValveIdRoute: ValvulasValveIdRoute,
+  ValvulasValveIdCapturarRoute: ValvulasValveIdCapturarRoute,
+  ValvulasValveIdFotosRoute: ValvulasValveIdFotosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
