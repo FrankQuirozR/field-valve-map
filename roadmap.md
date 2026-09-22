@@ -12,3 +12,4 @@
 - [x] Validación de compilación y flujos principales
 - [x] Corregir carga y encuadre del mapa offline
 - [x] Empaquetado Android y generación de APK instalable
+- [x] Optimización del mapa para emuladores y dispositivos Android
