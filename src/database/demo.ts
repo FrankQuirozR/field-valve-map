@@ -4,8 +4,8 @@ const materials = ['Hierro dúctil','Acero','PVC','Bronce'];
 const statuses = ['Operativa','Operativa','Operativa','En revisión'];
 const centers = [{lat:-11.9875,lng:-77.0651,zone:'Zona Norte',sector:'Sector Norte'},{lat:-12.0464,lng:-77.0428,zone:'Zona Centro',sector:'Sector Centro'},{lat:-12.1083,lng:-76.9961,zone:'Zona Sur',sector:'Sector Sur'}];
 export const demoValves: Valve[] = Array.from({length:20},(_,i)=>{
- const c=centers[i%3]; const n=i+1;
- return {id:`demo-${n}`,codigo:`VAL-${String(n).padStart(3,'0')}`,tipo:types[i%types.length],diametro:`${[4,6,8,10][i%4]}\"`,material:materials[i%materials.length],estado:statuses[i%statuses.length],latitud:c.lat+((i%5)-2)*0.00055,longitud:c.lng+((i%4)-1.5)*0.00065,altitud:90+i,precision:3.2+(i%4),sector:c.sector,zona:c.zone,observaciones:'Registro ficticio para demostración. No usar como información real.',fecha_actualizacion:'2026-09-21'};
+ const c=centers[i%3] ?? centers[0] ?? {lat:-12.04,lng:-77.04,zone:'Zona Demo',sector:'Sector Demo'}; const n=i+1;
+ return {id:`demo-${n}`,codigo:`VAL-${String(n).padStart(3,'0')}`,tipo:types[i%types.length]??'Compuerta',diametro:`${[4,6,8,10][i%4]??6}\"`,material:materials[i%materials.length]??'Hierro dúctil',estado:statuses[i%statuses.length]??'Operativa',latitud:c.lat+((i%5)-2)*0.00055,longitud:c.lng+((i%4)-1.5)*0.00065,altitud:90+i,precision:3.2+(i%4),sector:c.sector,zona:c.zone,observaciones:'Registro ficticio para demostración. No usar como información real.',fecha_actualizacion:'2026-09-21'};
 });
 export const demoZones: Zone[] = [
  {id:'north',nombre:'Zona Norte',valveCount:7,photoCount:6,sizeBytes:18_400_000,availableOffline:true,updatedAt:'2026-09-21',hasOfflineMap:true,isDemo:true},
