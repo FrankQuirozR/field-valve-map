@@ -14,6 +14,9 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    optimizeDeps: {
+      exclude: ["maplibre-gl"],
+    },
     plugins: [
       VitePWA({
         registerType: "autoUpdate",
