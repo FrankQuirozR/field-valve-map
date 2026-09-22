@@ -1,14 +1,15 @@
-# Optimización de rendimiento Android
+# Válvula seleccionada en el mapa
 
 ## Resultado
-Reducir los tirones constantes del mapa en emuladores y teléfonos Android sin retirar OpenStreetMap ni las funciones GIS.
+Al pulsar “Ver en mapa” desde el detalle, el mapa mostrará únicamente la válvula seleccionada, centrada y destacada en rojo.
 
 ## Cambios
-- Limitar la resolución interna del mapa para reducir trabajo de la GPU.
-- Reducir la caché de mosaicos y desactivar efectos de transición innecesarios.
-- Evitar desenfoques transparentes superpuestos al mapa.
-- Asegurar aceleración gráfica en Android.
+- Validar y leer el identificador de la válvula desde el enlace del mapa.
+- Aplicar ese identificador como filtro inicial del mapa y del buscador visible.
+- Centrar correctamente una única válvula y conservar la selección al abrir la pantalla.
+- Permitir limpiar el filtro desde el campo de búsqueda para volver a ver todas.
 
 ## Validación
-- Compilar la aplicación web y Android sin errores.
-- Verificar navegación y movimiento del mapa.
+- Probar el flujo Buscar → válvula → Ver en mapa.
+- Confirmar que solo aparece la válvula elegida y que queda centrada.
+- Comprobar que la aplicación compila sin errores.
