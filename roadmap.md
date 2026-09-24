@@ -14,6 +14,6 @@
 - [x] Empaquetado Android y generación de APK instalable
 - [x] Optimización del mapa para emuladores y dispositivos Android
 - [x] Filtrar y destacar en el mapa la válvula elegida desde Buscar
-- [ ] Corregir la visualización de puntos en el enlace web
-- [ ] Activar un selector para mostrar u ocultar las capas de mapa y válvulas
-- [ ] Diferenciar la simbología de válvulas y ubicación del usuario
+- [x] Corregir la visualización de puntos en el enlace web
+- [x] Activar un selector para mostrar u ocultar las capas de mapa y válvulas
+- [x] Diferenciar la simbología de válvulas y ubicación del usuario
